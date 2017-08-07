@@ -6,6 +6,8 @@ pymatgen - added instructions in 'working' dockerfile, tested on compute termina
 
 mantid - same as above
 
+Check lines 27/29 for iPython profile. Should update to jupyter_notebook_config ala http://jupyter-notebook.readthedocs.io/en/latest/config.html
+
 david notebooks - need to wget from github - resolve monday 8/7
 
 matlab - switching kernels in same container - ask gerard for matlab dockerfile - Gerard said
