@@ -46,7 +46,11 @@ RUN rm -f /home/idies/keystone.token
 
 RUN cd /home/idies/workspace && wget https://raw.githubusercontent.com/sciserver/Example-Notebooks/readme/StartHere.ipynb
 
+#clone David's example notebooks for MEDE
+
 RUN git clone https://github.com/mededsc/mede_example_notebooks.git
+
+#Install mantid + dependencies for mantid
 
 RUN source activate py27
 RUN conda config --add channels conda-forge
@@ -60,6 +64,8 @@ RUN conda install -y -c glotzer tbb=4.4.0
 RUM conda install -y -c conda-forge libglu=9.0.0
 
 RUN conda install -y -c mantid mantid-framework=3.10.0
+
+#Install pymatgen
 
 RUN source deactivate
 RUN conda install -y --channel matsci pymatgen
