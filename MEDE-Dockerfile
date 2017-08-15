@@ -47,8 +47,8 @@ RUN rm -f /home/idies/keystone.token
 RUN cd /home/idies/workspace && wget https://raw.githubusercontent.com/sciserver/Example-Notebooks/readme/StartHere.ipynb
 
 #clone David's example notebooks for MEDE
-
-RUN git clone https://github.com/mededsc/mede_example_notebooks.git
+#commented out until public repository made
+#RUN git clone https://github.com/mededsc/mede_example_notebooks.git
 
 #Install mantid + dependencies for mantid
 
