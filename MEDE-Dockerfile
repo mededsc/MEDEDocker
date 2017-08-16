@@ -54,21 +54,21 @@ RUN cd /home/idies/workspace && git clone https://github.com/davidelbert/mede_ex
 
 RUN source activate py27
 RUN conda config --add channels conda-forge
-RUN conda install -y -c asmeurer gsl=1.16
-RUN conda install -y -c conda-forge hdf5=1.8.18
-RUN conda install -y -c conda-forge jsoncpp=0.10.6
-RUN conda install -y -c conda-forge muparser=2.2.5
-RUN conda install -y -c auto python-nexus=0.87
-RUN conda install -y -c https://conda.anaconda.org/nexpy nexusformat
-RUN conda install -y -c glotzer tbb=4.4.0
-RUM conda install -y -c conda-forge libglu=9.0.0
+RUN conda install -c asmeurer gsl=1.16
+RUN conda install -c conda-forge hdf5=1.8.18
+RUN conda install -c conda-forge jsoncpp=0.10.6
+RUN conda install -c conda-forge muparser=2.2.5
+RUN conda install -c auto python-nexus=0.87
+RUN conda install -c https://conda.anaconda.org/nexpy nexusformat
+RUN conda install -c glotzer tbb=4.4.0
+RUM conda install -c conda-forge libglu=9.0.0
 
-RUN conda install -y -c mantid mantid-framework=3.10.0
+RUN conda install -c mantid mantid-framework=3.10.0
 
 #Install pymatgen
 
 RUN source deactivate
-RUN conda install -y --channel matsci pymatgen
+RUN conda install --channel matsci pymatgen
 
 
 USER root
