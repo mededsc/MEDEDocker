@@ -48,7 +48,7 @@ RUN cd /home/idies/workspace && wget https://raw.githubusercontent.com/sciserver
 
 #clone David's example notebooks for MEDE
 
-RUN git clone https://github.com/davidelbert/mede_example_notebooks_public.git
+RUN cd /home/idies/workspace && git clone https://github.com/davidelbert/mede_example_notebooks_public.git
 
 #Install mantid + dependencies for mantid
 
