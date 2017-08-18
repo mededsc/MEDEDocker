@@ -25,7 +25,10 @@ docker tag dmedv/compute-base-sl:7.2 base:7.2
 then build idies image with idies-dockerfile:
 docker build -t idies idies/
 
-then build whatever on top of idies:
-docker build -t <new image name> <directory containing dockerfile>
+then build python on top of idies:
+docker build -t python python/
+
+then build MEDE on top of python:
+docker build -t mede mede/
 
 issue: network connection while in build cmd. I usually use --net=host when in docker run, but unavailable in docker build.  Suspect networking to be at fault with our problems in lib install in mede dockerfile
