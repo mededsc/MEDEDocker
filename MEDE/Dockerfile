@@ -48,9 +48,10 @@ RUN cd /home/idies/workspace && wget https://raw.githubusercontent.com/sciserver
 
 #clone David's example notebooks for MEDE
 #commented out statement below because itd be bad practice to clone into local workspace dir. We want users to work within persistent
-#RUN cd /home/idies/workspace && git clone https://github.com/davidelbert/mede_example_notebooks_public.git
+RUN cd /home/idies/workspace && git clone https://github.com/davidelbert/mede_example_notebooks_public.git
 
-RUN cd /home/idies/workspace/persistent && if cd mede_example_notebooks_public; then git pull; else git clone https://github.com/davidelbert/mede_example_notebooks_public.git; fi
+#this if statement failed in the dockerfile - reverting to workspace directory for now
+#RUN cd /home/idies/workspace/persistent && if cd mede_example_notebooks_public; then git pull; else git clone https://github.com/davidelbert/mede_example_notebooks_public.git; fi
 
 # not sure the above bash script will work in sh dockerfile..
 
