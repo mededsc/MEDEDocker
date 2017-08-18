@@ -57,15 +57,17 @@ RUN cd /home/idies/workspace/persistent && if cd mede_example_notebooks_public; 
 #Install mantid + dependencies for mantid
 
 RUN source activate py27
-RUN conda config --add channels conda-forge
 RUN conda install -c asmeurer gsl=1.16
-RUN conda install -c conda-forge hdf5=1.8.18
+RUN conda config --add channels conda-forge
+#supposed fix to the 403 error
+RUN anaconda logout
 RUN conda install -c conda-forge jsoncpp=0.10.6
 RUN conda install -c conda-forge muparser=2.2.5
+RUN conda install -c conda-forge hdf5
 RUN conda install -c auto python-nexus=0.87
 RUN conda install -c https://conda.anaconda.org/nexpy nexusformat
 RUN conda install -c glotzer tbb=4.4.0
-RUM conda install -c conda-forge libglu=9.0.0
+RUN conda install -c conda-forge libglu=9.0.0
 
 RUN conda install -c mantid mantid-framework=3.10.0
 
