@@ -1,5 +1,10 @@
 FROM python
 
+#replace startup.sh in /opt/ added by python image dockerfile
+USER root
+ADD startup.sh /opt/
+RUN chmod a+x /opt/startup.sh
+
 #Install mantid + dependencies for mantid
 USER idies
 RUN source activate py27 && conda install -c asmeurer gsl=1.16
