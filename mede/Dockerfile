@@ -26,3 +26,5 @@ RUN source activate py27 && conda install -c mantid mantid-framework=3.10.0
 RUN conda install --channel matsci pymatgen
 RUN source activate py27 && conda install --channel matsci pymatgen
 
+#last statement must be USER root
+USER root
