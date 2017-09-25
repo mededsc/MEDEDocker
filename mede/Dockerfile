@@ -5,6 +5,10 @@ USER root
 ADD startup.sh /opt/
 RUN chmod a+x /opt/startup.sh
 
+#remove non-mede related 'starthere.ipynb' to avoid confusion
+
+RUN rm /home/idies/workspace/StartHere.ipynb
+
 #Install mantid + dependencies for mantid
 USER idies
 RUN source activate py27 && conda install -c asmeurer gsl=1.16
