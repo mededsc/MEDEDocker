@@ -1,10 +1,5 @@
 FROM python
 
-#replace startup.sh in /opt/ added by python image dockerfile
-USER root
-ADD startup.sh /opt/
-RUN chmod a+x /opt/startup.sh
-
 #remove non-mede related 'starthere.ipynb' to avoid confusion
 
 RUN rm /home/idies/workspace/StartHere.ipynb
@@ -29,6 +24,11 @@ RUN source activate py27 && conda install -c mantid mantid-framework=3.10.0
 
 RUN conda install --channel matsci pymatgen
 RUN source activate py27 && conda install --channel matsci pymatgen
+
+#replace startup.sh in /opt/ added by python image dockerfile
+USER root
+ADD startup.sh /opt/
+RUN chmod a+x /opt/startup.sh
 
 #last statement must be USER root
 USER root
